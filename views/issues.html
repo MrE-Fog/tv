@@ -1,0 +1,25 @@
+<div ng-controller="ListIssues">
+	<form ng-submit="searchIssue()" class="search-form">
+        <div class="input-group">
+            <input type="text" ng-model="searchIssueText" name="searchIssueText" class="form-control" placeholder="Search for issues">
+            <span class="input-group-btn">
+	            <button class="btn btn-primary" type="submit">Search</button>
+	        </span>
+        </div>
+    </form>
+	<div class="gits row">
+        <div class="gits-container col-lg-2 col-md-3 col-sm-4" ng-repeat="issue in result.items" ng-if="!isSearching">
+            <div class="gits-item">
+                <img class="gits-img" src="{{issue.user.avatar_url}}" alt="{{issue.user.login}}">
+                <a class="gits-link" href="{{issue.user.html_url}}" target="_blank">{{ issue.user.login | limitTo: 11 }}{{issue.user.login.length > 11 ? '...' : ''}}</a>
+                <div class="gits-desc short">
+                    {{ issue.title | limitTo: 15 }}{{issue.title.length > 15 ? '...' : ''}}
+                </div>
+                <div class="gits-desc full">
+                    {{issue.title}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loader" ng-if="isSearching"></div>
+</div>

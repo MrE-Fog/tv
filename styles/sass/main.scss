@@ -1,0 +1,241 @@
+@import 'bootstrap';
+// General
+body {
+    background-color: #f5f5f5;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.navbar {
+    background: #00bcd4;
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .4);
+    margin: 0;
+    &-brand {
+        svg {
+            height: 40px;
+            width: auto;
+            color: #000;
+        }
+    }
+    &-brand:hover{
+    	svg{
+    		color: #222;
+    	}
+    }
+    .nav-item.active {
+        .nav-link {
+            color: #f44336;
+        }
+    }
+    .nav-link {
+        font-size: 1.5em;
+        color: #fff;
+    }
+    .nav-link:hover {
+        color: #f44336;
+    }
+    &-toggler-right {
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 0;
+        color: #000;
+        svg {
+            height: 2em;
+            width: 2em;
+        }
+    }
+    &-toggleable-md > .container {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+.content {
+    height: calc(100% - 100px);
+    position: relative;
+    min-height: 200px;
+}
+
+.no {
+    &-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &-margin {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.search-form {
+    padding: 1em 0;
+    position: relative;
+    z-index: 1;
+}
+
+.loader {
+    border: 10px solid #dfdfdf;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    top: 50%;
+    margin-top: -30px;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// Gits
+.gits {
+    position: relative;
+    margin-left: 0;
+    &-container {
+        padding-left: 0;
+        margin-bottom: 1em;
+        position: relative;
+    }
+    &-item {
+        position: relative;
+        z-index: 1;
+        padding: 1em;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        transform: all 1s;
+        transition: all 1s;
+        -webkit-transform: all 1s;
+        -webkit-transition: all 1s
+    }
+    &-link {
+        text-align: center;
+        display: block;
+    }
+    &-img {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: .5em;
+    }
+    &-desc {
+        font-size: .85em;
+        color: #999;
+    }
+    &-counts {
+        font-size: .8em;
+        text-align: center;
+        svg {
+            height: 1em;
+            margin-bottom: 2px;
+            margin-left: 2px;
+        }
+    }
+    &-desc.full {
+        display: none;
+    }
+    &-more {
+        margin-top: 1em;
+        width: 100%;
+    }
+    .octicon {
+        display: inline-block;
+        vertical-align: middle;
+        fill: currentColor;
+    }
+}
+
+.gits-item:hover {
+    z-index: 2;
+    position: absolute;
+    width: 150%;
+    height: auto;
+    left: -25%;
+    top: -25%;
+    opacity: 1;
+    .short {
+        display: none;
+    }
+    .full {
+        display: block;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    body {
+        font-size: 1.3em;
+    }
+    .content {
+        height: auto;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    body {
+        font-size: 1em;
+    }
+    .navbar {
+        height: auto;
+    }
+}
+
+@media all and (max-width: 576px) {
+    body {
+        font-size: 0.8em;
+    }
+    .container {
+        width: 100%;
+    }
+    .gits-item:hover {
+        z-index: 2;
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        opacity: 1;
+    }
+    .gits-item .short {
+        display: none;
+    }
+    .gits-item .full {
+        display: block;
+    }
+    .gits-desc{
+    	font-size: 1em;
+    }
+    .gits-link{
+    	font-size: 1.2em;
+    }
+    .gits-counts{
+    	font-size: 1em;
+    }
+}
